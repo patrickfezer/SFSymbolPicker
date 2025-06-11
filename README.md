@@ -12,6 +12,27 @@ A customizable SwiftUI view that lets users pick SF Symbols, categorized by them
 
 ---
 
+## 📥 Installation
+
+### Swift Package Manager
+
+1. Open your Xcode project
+2. Go to **File > Add Package Dependencies**
+3. Enter the repository URL:
+   ```
+   https://github.com/patrickfezer/SFSymbolPicker
+   ```
+4. Choose the latest version and add it to your target
+
+### Import
+
+At the top of any Swift file where you want to use the picker:
+
+```swift
+import SFSymbolPicker
+```
+
+
 ## 🛠️ Initialization
 
 ```swift
@@ -27,14 +48,14 @@ SFSymbolPicker(
 
 ### Parameters
 
-| Name             | Type                              | Default              | Description                              |
-|------------------|-----------------------------------|----------------------|------------------------------------------|
-| `selectedSymbol` | `Binding<String>`                 | -                    | Binding to the selected SF Symbol name   |
-| `title`          | `LocalizedStringKey`              | -                    | Title shown in the navigation bar        |
-| `searchPromt`    | `LocalizedStringKey`              | Search symbol        | Search bar placeholder                   |
-| `symbols`        | `SFSymbolCategories.Type`         | DefaultSymbols.self  | Optional custom symbol set               |
-| `autoDismiss`    | `Bool`                            | false                | Automatically dismiss after selection    |
-| `toolbarContent` | `@ToolbarContentBuilder` closure  | ToolbarItem {}       | Add custom ToolbarItems                  |
+| Name             | Type                              | Default value         | Description                              |
+|------------------|-----------------------------------|-----------------------|------------------------------------------|
+| `selectedSymbol` | `Binding<String>`                 | -                     | Binding to the selected SF Symbol name   |
+| `title`          | `LocalizedStringKey`              | -                     | Title shown in the navigation bar        |
+| `searchPromt`    | `LocalizedStringKey`              | `Search symbol`       | Search bar placeholder                   |
+| `symbols`        | `SFSymbolCategories.Type`         | `DefaultSymbols.self` | Optional custom symbol set               |
+| `autoDismiss`    | `Bool`                            | `false`               | Automatically dismiss after selection    |
+| `toolbarContent` | `@ToolbarContentBuilder` closure  | `ToolbarItem {}`      | Add custom ToolbarItems                  |
 
 ---
 
