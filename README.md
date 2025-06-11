@@ -1,4 +1,3 @@
-
 # SFSymbolPicker
 
 A customizable SwiftUI view that lets users pick SF Symbols, categorized by themes like Food, Health, Transport, etc.
@@ -11,6 +10,7 @@ A customizable SwiftUI view that lets users pick SF Symbols, categorized by them
 - Localization-ready header sorting
 
 ---
+
 
 ## 📥 Installation
 
@@ -31,6 +31,8 @@ At the top of any Swift file where you want to use the picker:
 ```swift
 import SFSymbolPicker
 ```
+
+---
 
 
 ## 🛠️ Initialization
@@ -59,6 +61,7 @@ SFSymbolPicker(
 
 ---
 
+
 ## 🧪 Example Usage
 
 ### ✅ Basic Picker (No Toolbar)
@@ -76,7 +79,6 @@ struct ExampleView: View {
 }
 ```
 
----
 
 ### 🛠 Picker With Toolbar
 
@@ -90,12 +92,12 @@ struct ExampleViewWithToolbar: View {
             title: "Pick Icon",
             autoDismiss: true
         ) {
-            ToolbarItem(placement: .cancellationAction) {
+            ToolbarItem(placement: .topBarLeading) {
                 Button("Cancel") {
                     // Your dismiss logic
                 }
             }
-            ToolbarItem(placement: .confirmationAction) {
+            ToolbarItem(placement: .topBarTrailing) {
                 Button("Done") {
                     // Your confirmation logic
                 }
@@ -107,48 +109,10 @@ struct ExampleViewWithToolbar: View {
 
 ---
 
-## 🧩 Custom Symbol Categories
-
-You can provide your own list of categorized SF Symbols by conforming to the `SFSymbolCategories` protocol:
-
-```swift
-struct MySymbols: SFSymbolCategories {
-    static let categories: [String : [String]] = [
-        "Custom": ["star", "heart.fill", "bolt"],
-        "Weather": ["sun.max", "cloud", "wind"]
-    ]
-}
-```
-
-Then pass your custom set to the picker:
-
-```swift
-SFSymbolPicker(
-    selectedSymbol: $selectedSymbol,
-    title: "Custom Symbols",
-    symbols: MySymbols.self
-)
-```
-
----
 
 ## 📂 Default Symbol Categories
 
-Out of the box, `DefaultSymbols` provides a wide variety of grouped SF Symbols like `Food`, `Transport`, `Fitness`, `Media`, etc.
-
----
-
-
----
-
-## 🌐 Localization Support
-
-All category headers support localization through the system's `LocalizedStringKey`.  
-You can provide localized versions for these default headers via `.strings` or `.xcstrings` 'files in your app.
-
-### Default Localizable Headers
-
-The following default headers are available for localization:
+Out of the box, `DefaultSymbols` provides a wide variety of grouped SF Symbols: 
 
 - `Access`
 - `Animals`
@@ -177,9 +141,43 @@ The following default headers are available for localization:
 - `Travel`
 - `Weather`
 
+---
+
+
+## 🧩 Custom Symbol Categories
+
+You can provide your own list of categorized SF Symbols by conforming to the `SFSymbolCategories` protocol:
+
+```swift
+class MySymbols: SFSymbolCategories {
+    static let categories: [String : [String]] = [
+        "Custom": ["star", "heart.fill", "bolt"],
+        "Weather": ["sun.max", "cloud", "wind"]
+    ]
+}
+```
+
+Then pass your custom set to the picker:
+
+```swift
+SFSymbolPicker(
+    selectedSymbol: $selectedSymbol,
+    title: "Custom Symbols",
+    symbols: MySymbols.self
+)
+```
+
+---
+
+
+## 🌐 Localization Support
+
+All category headers support localization through the system's `LocalizedStringKey`.  
+You can provide localized versions for these default headers via `.strings` or `.xcstrings` 'files in your app.
+
+---
+
 
 ## 📃 License
 
 MIT License. Feel free to use, modify, and contribute.
-
----
