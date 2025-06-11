@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcworkspace
+!.xcworkspace/contents.xcworkspacedata
+*.xccheckout
+
+# Xcode Archives
+*.xcarchive
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Exported Apps
+*.ipa
+
+# Symbols
+*.dSYM.zip
+*.dSYM
+
+# SwiftUI Previews
+.swiftdeps
+
