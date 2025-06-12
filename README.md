@@ -92,12 +92,12 @@ struct ExampleViewWithToolbar: View {
             title: "Pick Icon",
             autoDismiss: true
         ) {
-            ToolbarItem(placement: .topBarLeading) {
+            ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel") {
                     // Your dismiss logic
                 }
             }
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .confirmationAction) {
                 Button("Done") {
                     // Your confirmation logic
                 }
@@ -118,6 +118,8 @@ Out of the box, `DefaultSymbols` provides a wide variety of grouped SF Symbols:
 - `Animals`
 - `Arrows`
 - `Awards`
+- `Communication`
+- `Devices`
 - `Education`
 - `Entertainment`
 - `Events`
@@ -137,6 +139,7 @@ Out of the box, `DefaultSymbols` provides a wide variety of grouped SF Symbols:
 - `Shapes`
 - `Shopping`
 - `Tickets`
+- `Tools`
 - `Transport`
 - `Travel`
 - `Weather`
@@ -149,7 +152,7 @@ Out of the box, `DefaultSymbols` provides a wide variety of grouped SF Symbols:
 You can provide your own list of categorized SF Symbols by conforming to the `SFSymbolCategories` protocol:
 
 ```swift
-class MySymbols: SFSymbolCategories {
+struct MySymbols: SFSymbolCategories {
     static let categories: [String : [String]] = [
         "Custom": ["star", "heart.fill", "bolt"],
         "Weather": ["sun.max", "cloud", "wind"]

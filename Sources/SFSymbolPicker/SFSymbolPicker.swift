@@ -5,6 +5,7 @@ public struct SFSymbolPicker<ToolbarItems: ToolbarContent>: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.locale) private var locale
     
+    
     // MARK: Properties
     @Binding var selectedSymbol: String
     @State private var searchText: String
@@ -118,7 +119,8 @@ struct SFSymbolPickerWrapper: View {
     }
 }
 
-// MARK: Previewå
+
+// MARK: Preview
 #Preview("Default") {
     SFSymbolPickerWrapper()
 }
