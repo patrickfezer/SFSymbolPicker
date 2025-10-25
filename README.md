@@ -1,6 +1,12 @@
 # SFSymbolPicker
-
 A customizable SwiftUI view that lets users pick SF Symbols, categorized by themes like Food, Health, Transport, etc.
+
+<p align="left">
+  <img src="Images/All Symbols.jpg" alt="All Symbols screen" width="320">
+  <img src="Images/Filter your Symbols.jpg" alt="Filter your symbols screen" width="320">
+</p>
+
+
 
 ## 📦 Features
 
